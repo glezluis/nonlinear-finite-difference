@@ -1,5 +1,5 @@
 # nonlinear-finite-difference
-This Matlab script will solve bounded problems for non-linear differential equations. It solves by using Newton's method for iteration. All programs found for solving these were done by explecity inputing each line of code for different examples. This program uses symbolic functions in Matlab and the Jacobian command. It can solve for any  non-linear differential equations ```f(x,y,y')``` given an interval ```[a,b]```, change in x ```h```, and bounds ```y(a) = alpha``` and ```y(b) = beta```. 
+This Matlab script will solve bounded problems for non-linear differential equations. It solves by using Newton's method for iteration. All programs found for solving these equeations were done by explecity inputing each line of code for each individual case. This program uses symbolic functions in Matlab and the Jacobian command. It can solve for any  non-linear differential equations ```f(x,y,y')``` given an interval ```[a,b]```, change in x ```h```, and bounds ```y(a) = alpha``` and ```y(b) = beta```. 
 
 ## Prerequisites 
 Matlab must be installed on This script will on Matlab R2017b and newer but has not been tested on older versions. 
