@@ -64,11 +64,11 @@ Once the scritpt is ran it will display the following table
       3    14.3333333333333    14.3333333333333                       0
 
 ```
-x: the values for x. 
+```x```: the values for x. 
 
-w: the approximation for y
+```w```: the approximation for y
 
-y: the values for the actual solutions for y
+```y```: the values for the actual solutions for y
 
-difference: the absolute value for the diffrence between w and y
+```difference```: the absolute value for the diffrence between w and y
 
