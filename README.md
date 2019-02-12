@@ -11,7 +11,7 @@ $ git clone https://github.com/glezluis/nonlinear-finite-difference.git
 ```
 ## Parameters 
 
-The following lines are the paramaters for the differential equation and program. You can change them to run a different example
+The following lines are the paramaters for the differential equation and program. You can change them to run a different differential equation
 ```
 5   f = symfun((1/8)*(32 + 2*x^3 - u*v), [x, u, v]); % define f(x,y,y')
 6   a = 1; b = 3; h = .1; Alpha = 17; Beta = 43/3; %parameters
@@ -19,8 +19,6 @@ The following lines are the paramaters for the differential equation and program
 8
 9   iterations = 4; %total number of iterations
 ```
-They can be changed 
-
 ## On Matlab
 Open the file with matlab and run 
 ```
