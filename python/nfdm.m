@@ -5,8 +5,8 @@ function retVal = nfdm(fstr, ystr, a, b, h, Alpha, Beta)
 	% y = symfun(x^2 + 16/x, x); % define actual solution equation
 	f =  symfun(str2sym(fstr), [x, u, v]);
 	y = symfun(str2sym(ystr), x);
-	iterations = 4; %total number of iterations
-	xi = double(a):h:double(b); % x values
+	iterations = 10; %total number of iterations
+	xi = a:h:b; % x values
 	n = length(xi); % value for n for this function
 
 	w0 = symfun(Alpha + (Beta-Alpha)/(b-a)*(x - a), x); % define initial approximation linear equation
@@ -24,16 +24,10 @@ function retVal = nfdm(fstr, ystr, a, b, h, Alpha, Beta)
 	F(n-2) = symfun(-W(i) + 2*W(i+1) +  (h^2)*f(xi(i+1), W(i+1), (Beta - W(i))/(2*h)) - Beta,[W(i), W(i+2)]);
 
 	for i =1:iterations % this loop finds all the approximations 
-		Jw = double(subs(jacobian(F, W),W ,wi(:,i)')); %find the jacobian matrix and pluF in wi
+		Jw = double(subs(jacobian(F, W),W ,wi(:,i)')); %find the jacobian matrix and plug in wi
 		Fw = double(subs(F, W, wi(:,i)')); % plug in wi into Fi
 		wi(:,i+1) = wi(:,i) -  Jw\Fw; % find next approximation
 	end
 
-	% display results in a table 
-	% x = xi';
-	% w = wi(:,i);
-	% y = double(y(x));
-	% difference = abs(w - y);
-	% retVal = py.tuple({py.list(xi), py.list(wi(:,i)}))
 	retVal = {xi, wi(:,i)', double(y(xi))};
 end
